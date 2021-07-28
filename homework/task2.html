@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .sidebar{
+            float: left;
+            width: 300px;
+            height: 720px;
+            min-width: 160px;
+            background-color: #1e2933;
+        }
+        .logo{
+            width: 300px;
+            height: 50px;
+            min-width: 160px;
+            background:  url('../resources/image/sidebar/logo示例.png') no-repeat center;
+        }
+        .name{
+            width: 300px;
+            height: 60px;
+            min-width: 160px;
+            background:  url('../resources/image/sidebar/Oval.png') no-repeat 50px center;
+        }
+        .menu{
+            width: 300px;
+            height: 320px;
+            min-width: 160px;
+        }
+        .s0{
+            width: 300px;
+            height: 40px;
+            min-width: 160px;
+            background: url('../resources/image/sidebar/菜单.png') no-repeat 35px 20px;
+        }
+        a {
+            display: block;
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            min-width: 160px;
+            color: white;
+            font-size: 5px;
+            text-decoration: none;
+            text-indent: 15em;
+        }
+        a:hover{
+            background-color: coral;
+        }
+        .s1{
+            
+            background:  url('../resources/image/sidebar/仪表.png') no-repeat 35px center;
+        }
+        .s2{
+            
+            background: url('../resources/image/sidebar/用户.png') no-repeat 35px center;
+        }
+        .s3{
+            
+            background: url('../resources/image/sidebar/文件.png') no-repeat 35px center;
+        }
+        .s4{
+            
+            background : url('../resources/image/sidebar/聊天.png') no-repeat 35px center,
+                         url('../resources/image/sidebar/6.png') no-repeat 220px,
+                         url('../resources/image/sidebar/蓝框.png') no-repeat 20px;
+                        
+        }
+        .s5{
+            
+            background : url('../resources/image/sidebar/项目.png') no-repeat 35px center;
+        }
+        .s6{
+            
+            background : url('../resources/image/sidebar/日程表.png') no-repeat 35px center;
+        }
+        .s7{
+            
+            background: url('../resources/image/sidebar/支付.png') no-repeat 35px center;
+        }
+        .help{
+            width: 300px;
+            height: 120px;
+            min-width: 160px;
+        }
+        .s8{
+            width: 300px;
+            height: 40px;
+            min-width: 160px;
+            background: url('../resources/image/sidebar/帮助.png')no-repeat 35px center;
+        }
+        .s9{
+
+            background: url('../resources/image/sidebar/需要帮助.png')no-repeat 35px center;
+        }
+        .s10{
+
+            background: url('../resources/image/sidebar/联系.png')no-repeat 35px center;
+        }
+        .set{
+            width: 300px;
+            height: 170px;
+            min-width: 160px;
+        }
+        .s11{
+            width: 300px;
+            height: 40px;
+            min-width: 160px;
+            background: url('../resources/image/sidebar/设置.png')no-repeat 35px center;
+        }
+        .s12{
+
+            background: url('../resources/image/sidebar/账号设置.png')no-repeat 35px center;
+        }
+        .s13{
+
+            background: url('../resources/image/sidebar/深色模式.png')no-repeat 35px center;
+        }
+        .s14{
+
+            background: url('../resources/image/sidebar/退出.png')no-repeat 35px center;
+        }
+        .content{
+                height: 720px;
+                min-width: 400px;
+                margin-left: 300px;
+                background: #f8fafd;
+        }
+        .search{
+                height: 50px;
+                min-width: 400px;
+                background: url('../resources/image/main/搜索框.png') no-repeat 100px center, 
+                            url('../resources/image/main/Flag.png') no-repeat 1000px center ;
+        }
+        .main{
+              float: left;
+              width: 450px;
+              height: 670px;  
+            }
+        .l0{
+              width: 450px;
+              height: 40px;
+              border: 1px solid rgba(184, 180, 180, 0.336); 
+              background: url('../resources/image/main/用户列表+消息.png') no-repeat 100px 10px ;
+        }
+        .l1{
+              position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/1.png') no-repeat 100px,
+                          url('../resources/image/main/num2.png') no-repeat 330px 46px,
+                          url('../resources/image/main/401PM.png') no-repeat 300px 15px; 
+        }
+        .l2{
+              position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/2.png') no-repeat 100px,
+                          url('../resources/image/main/345PM.png') no-repeat 300px 15px,
+                          url('../resources/image/main/蓝边.png') no-repeat 1px;
+        }
+        .l3{
+              position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/3.png') no-repeat 100px,
+                          url('../resources/image/main/num3.png') no-repeat 330px 46px,
+                          url('../resources/image/main/昨天.png') no-repeat 300px 15px; 
+        }
+        .l4{
+             position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/4.png') no-repeat 100px,
+                          url('../resources/image/main/5天前.png') no-repeat 300px 15px; 
+        }
+        .l5{
+              position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/5.png') no-repeat 100px,
+                          url('../resources/image/main/ReadIcon.png') no-repeat 330px 46px,
+                          url('../resources/image/main/1周前.png') no-repeat 300px 15px; 
+        }
+        .l6{
+              position: relative;
+              width: 450px;
+              height: 80px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/6.png') no-repeat 100px,
+                          url('../resources/image/main/ReadIcon.png') no-repeat 330px 46px,
+                          url('../resources/image/main/3周前.png') no-repeat 300px 15px; 
+        }
+        .l7{
+              position: relative;
+              width: 450px;
+              height: 73px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/7.png') no-repeat 100px,
+                          url('../resources/image/main/num1.png') no-repeat 330px 46px,
+                          url('../resources/image/main/2019.10.03.png') no-repeat 300px 15px; 
+        }
+        .l8{
+              position: relative;
+              width: 450px;
+              height: 60px;
+              border: 1px solid rgba(184, 180, 180, 0.336);
+              background: url('../resources/image/main/1.png') no-repeat 100px,
+                          url('../resources/image/main/2019.10.02.png') no-repeat 300px 15px; 
+        }
+        .c1{
+              position: absolute;
+              left: 180px;
+              top: 5px;
+              font-size: 15px;
+              font-weight: bold;
+        }
+        .c2{
+              position: absolute;
+              left: 180px;
+              top: 40px;
+        }
+        .right{
+               height: 670px;
+               min-width: 400px;
+               margin-left: 450px;
+        }
+        .r0{
+            height: 50px;
+            background: url('../resources/image/right/新团队成员.png') no-repeat 25px;
+        }
+        .r1{
+            position: relative;
+            height: 570px;
+            background: url('../resources/image/right/p1.png') no-repeat 55px 10px,
+                        url('../resources/image/right/952AM.png') no-repeat 367px 17px,
+                        url('../resources/image/right/b1.png') no-repeat 53px 43px,
+                        url('../resources/image/right/1108AM.png') no-repeat 628px 95px,
+                        url('../resources/image/right/Background.png') no-repeat 260px 120px,
+                        url('../resources/image/right/p1.png') no-repeat 55px 212px,
+                        url('../resources/image/right/115PM.png') no-repeat 430px 220px,
+                        url('../resources/image/right/b3.png') no-repeat 53px 240px,
+                        url('../resources/image/right/228PM.png') no-repeat 630px 307px,
+                        url('../resources/image/right/Background.png') no-repeat 260px 326px,
+                        url('../resources/image/right/p3.png') no-repeat 55px 409px,
+                        url('../resources/image/right/259PM.png') no-repeat 420px 420px,
+                        url('../resources/image/right/b5.png') no-repeat 55px 434px,
+                        url('../resources/image/right/p4.png') no-repeat 55px 494px,
+                        url('../resources/image/right/345PM.png') no-repeat 420px 506px,
+                        url('../resources/image/right/b5.png') no-repeat 55px 520px;
+        }
+        .t{
+            position: absolute;
+            font-size: 15px;
+            color: #f8fafd;
+            font-weight: bold;
+        }
+        .a{
+            left: 180px;
+            top: 50px;
+        }
+        .b{
+            left: 300px;
+            top: 150px;
+            color: black;
+        }
+        .c{
+            left: 180px;
+            top: 260px;
+        }
+        .d{
+            left: 300px;
+            top: 360px;
+            color: black;
+        }
+        .e{
+            left: 180px;
+            top: 445px;
+        }
+        .f{
+            left: 180px;
+            top: 530px;
+        }
+        .r2{
+            height: 50px;
+            background: url('../resources/image/right/MessageField.png') no-repeat 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo"></div>
+        <div class="name"></div>
+        <div class="menu">
+            <div class="s0"></div>
+            <a href="#" class="s1">仪表盘</a>
+            <a href="#" class="s2">用户列表</a>
+            <a href="#" class="s3">文件</a>
+            <a href="#" class="s4">聊天</a>
+            <a href="#" class="s5">项目</a>
+            <a href="#" class="s6">日程表</a>
+            <a href="#" class="s7">支付方式</a>
+        </div>    
+        <div class="help">
+            <div class="s8"></div>
+            <a href="#" class="s9">需要帮助?</a>
+            <a href="#" class="s10">联系我们</a>
+        </div>    
+        <div class="set">
+            <div class="s11"></div>
+            <a href="#" class="s12">账号设置</a>
+            <a href="#" class="s13">深色模式</a>
+            <a href="#" class="s14">退出</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="search"></div>
+        <div class="main">
+            <div class="l0"></div>
+            <div class="l1">
+               <div class="c1">名称示例</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l2">
+               <div class="c1">名字示例</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l3">
+               <div class="c1">新项目</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l4">
+               <div class="c1">进度更新</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l5">
+               <div class="c1">工作期望</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l6">
+               <div class="c1">第一个项目</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l7">
+               <div class="c1">新工作机会</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+            <div class="l8">
+               <div class="c1">恭喜啦</div>
+               <div class="c2"> Hellow world!</div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="r0"></div>
+            <div class="r1">
+                <div class="t a">
+                    哒咩哒咩
+                </div>
+                <div class="t b">
+                    哒咩哒咩
+                </div>
+                <div class="t c">
+                    哒咩哒咩
+                </div>
+                <div class="t d">
+                    哒咩哒咩
+                </div>
+                <div class="t e">
+                    哒咩哒咩
+                </div>
+                <div class="t f">
+                    哒咩哒咩
+                </div>
+            </div>
+            <div class="r2"></div>
+        </div>
+    </div>
+</body>
+</html>
