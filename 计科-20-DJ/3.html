@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float实现</title>
+    <style>
+       .myitem {
+	        overflow: hidden;
+        }
+        .right {
+            width: 250px;
+            height: 500px;
+            background-color: #4158D0;
+            background-image: linear-gradient(43deg, #4158D0 0%, #bf39b5 46%, #FFCC70 100%);
+            float: right;
+        }
+        .left {
+            height: 500px;
+            margin-right: 250px;
+            background-color: #0093E9;
+            background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="myitem">
+        <div class="right"> right 右侧固定</div>
+        <div class="left"> left 左侧自适应</div>
+    </div>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position实现</title>
+    <style>
+        .myitem {
+	        position: relative;
+        }
+        .left {
+            height: 500px;
+            margin-right: 250px;
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+        }
+        .right {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 250px;
+            height: 500px;
+            background-color: #FFFFFF;
+            background-image: linear-gradient(298deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="myitem">
+        <div class="right"> right 右侧固定</div>
+        <div class="left"> left 左侧自适应</div>
+    </div>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex实现</title>
+    <style>
+        .myitem {
+	        display: flex;
+        }
+        .left {
+            flex: 1 1 auto;
+            height: 500px;
+            background-color: #00DBDE;
+            background-image: linear-gradient(90deg, #00DBDE 0%, #FC00FF 100%);
+
+        }
+        .right {
+            flex: 0 0 auto;
+            width: 250px;
+	        height: 500px;
+            background-color: #FFFFFF;
+            background-image: linear-gradient(298deg, #FFFFFF 0%, #6284FF 50%, #FF0000 100%);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="myitem">
+        <div class="right"> right 右侧固定</div>
+        <div class="left"> left 左侧自适应</div>
+    </div>
+</body>
+</html>
