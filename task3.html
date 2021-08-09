@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>开学倒计时</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    p {
+      font-size: 80px;
+      text-align: center;
+    }
+    p span {
+      color: red;
+    }
+    
+    html,body{
+        height: 100%;
+    }
+    div{
+        width: 100%;
+        height: 100%;
+        background-color: #4158D0;
+        background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+     }
+  </style>
+</head>
+<body>
+<div class="dj">
+<p>开学倒计时</p>
+<p><span></span></p>
+</div>  
+<script>
+  var Span = document.querySelector('span');
+  function dj(n) {
+    return n >= 0 && n < 10 ? '0' + n : '' + n;
+  }
+  function getDate() {
+    var oldTime = Date.now();
+    var newTime = +new Date('2021-9-5 00:00:00');
+    var second = parseInt((newTime - oldTime) / 1000);
+    var day = parseInt(second / 60 / 60 / 24);
+    var hour = parseInt(second / 60 / 60 % 24);
+    var minute = parseInt(second / 60 % 60);
+    var second = parseInt(second  % 60);
+    var str = dj(day) + '天'+ dj(hour) + '小时'+ dj(minute) + '分钟'+ dj(second) + '秒';
+    Span.innerHTML = str;
+  }
+  getDate();
+  setInterval(getDate, 1000);
+</script>
+</body>
+</html>
+
