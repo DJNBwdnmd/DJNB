@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta id="viewport" content="width=device-width, initial-scale=1.0">
-    <title>±íµ¥ÑéÖ¤</title>
+    <title>è¡¨å•éªŒè¯</title>
     <style>
         *{
             margin: 0;
@@ -56,32 +57,32 @@
 <body>
     <div class="dj">
         <div class="title">
-            <p>´´½¨ÕË»§</p>
+            <p>åˆ›å»ºè´¦æˆ·</p>
         </div>
         
            <ul>
                <li>
-                <label>ÓÃ»§Ãû</label>
-                <input type="text" id="myname" placeholder="ÇëÊäÈëÓÃ»§Ãû" >
+                <label>ç”¨æˆ·å</label>
+                <input type="text" id="myname" placeholder="è¯·è¾“å…¥ç”¨æˆ·å" >
                 <div id="ds"></div>
                </li>
                <li>
-                <label>ÃÜÂë</label>
-                <input type="password" id="psd" placeholder="ÇëÊäÈëÃÜÂë">
+                <label>å¯†ç </label>
+                <input type="password" id="psd" placeholder="è¯·è¾“å…¥å¯†ç ">
                 <div id="ds"></div>
                </li>
                <li>
-                <label>È·ÈÏÃÜÂë</label>
-                <input type="password" id="tpsd" placeholder="ÇëÊäÈëÃÜÂë">
+                <label>ç¡®è®¤å¯†ç </label>
+                <input type="password" id="tpsd" placeholder="è¯·è¾“å…¥å¯†ç ">
                 <div id="ds"></div>
                </li>
                <li>
-                <label>ÊÖ»úºÅÂë</label>
-                <input type="text" id="pho" placeholder="ÇëÊäÈëÊÖ»úºÅ">
+                <label>æ‰‹æœºå·ç </label>
+                <input type="text" id="pho" placeholder="è¯·è¾“å…¥æ‰‹æœºå·">
                 <div id="ds"></div>
                </li>
            </ul>
-           <button>Ìá½»</button>
+           <button>æäº¤</button>
     </div>
     <script>
         var mybutton = document.querySelector("button");
@@ -89,40 +90,40 @@
         var myname = document.getElementById('myname');
         var nPattern = /^[a-zA-Z0-9_-]{4,16}$/
         if(nPattern.test(myname.value)){
-           myname.nextElementSibling.innerHTML="ÓÃ»§ÃûºÏ·¨";
+           myname.nextElementSibling.innerHTML="ç”¨æˆ·ååˆæ³•";
            myname.nextElementSibling.className = 'nb';
         }
         else{
-            myname.nextElementSibling.innerHTML="ÓÃ»§Ãû²»ºÏ·¨";
+            myname.nextElementSibling.innerHTML="ç”¨æˆ·åä¸åˆæ³•";
             myname.nextElementSibling.className = 'ak';
         }
         var psd = document.getElementById('psd');
         var pPattern = /^1[0-5]{2}[6-9]{3}[a-dA-D]{2}$/
         if(pPattern.test(psd.value)){
-            psd.nextElementSibling.innerHTML="ÃÜÂëºÏ·¨";
+            psd.nextElementSibling.innerHTML="å¯†ç åˆæ³•";
             psd.nextElementSibling.className="nb";
         }
         else{
-            psd.nextElementSibling.innerHTML="ÃÜÂë²»ºÏ·¨";
+            psd.nextElementSibling.innerHTML="å¯†ç ä¸åˆæ³•";
             psd.nextElementSibling.className = 'ak';
         }
         var tpsd = document.getElementById('tpsd');
         if(tpsd.value == psd.value && pPattern.test(psd.value)){
-            tpsd.nextElementSibling.innerHTML="ÃÜÂëÒ»ÖÂ";
+            tpsd.nextElementSibling.innerHTML="å¯†ç ä¸€è‡´";
             tpsd.nextElementSibling.className="nb";
         }
         else{
-            tpsd.nextElementSibling.innerHTML="ÃÜÂë²»ºÏ·¨»ò²»Ò»ÖÂ";
+            tpsd.nextElementSibling.innerHTML="å¯†ç ä¸åˆæ³•æˆ–ä¸ä¸€è‡´";
             tpsd.nextElementSibling.className = 'ak';
         }
         var pho = document.getElementById('pho');
         var oPattern = /^1[3-9][0-9]{9}$/
         if(oPattern.test(pho.value)){
-            pho.nextElementSibling.innerHTML="ÊÖ»úºÅÂëºÏ·¨";
+            pho.nextElementSibling.innerHTML="æ‰‹æœºå·ç åˆæ³•";
             pho.nextElementSibling.className='nb';
         }
         else{
-            pho.nextElementSibling.innerHTML="ÊÖ»úºÅÂë²»ºÏ·¨";
+            pho.nextElementSibling.innerHTML="æ‰‹æœºå·ç ä¸åˆæ³•";
             pho.nextElementSibling.className='ak';
         }
     }
