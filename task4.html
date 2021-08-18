@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单验证</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background:#ccc;
+        }
+        .dj{
+            width: 500px;
+            padding: 40px;
+            background-color: #efefef;
+            border: 1px solid #666;
+            margin: 100px auto;
+        }
+        .title{
+            text-align: center;
+            font-size:larger;
+            font-weight: bold;
+            color: fuchsia;
+            margin-bottom: 27px;
+        }
+        #ds{
+            height: 20px;
+            padding-left: 105px;
+        }
+        .nb{
+            color: green;
+        }
+        .ak{
+            color: red;
+        }
+        label{
+            display:inline-block;
+            width:20%;
+        }
+        li>input{
+            width:60%;
+        }
+        button{
+            position: relative;
+            left: 221px;
+            top:14px;
+            width: 63px;
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dj">
+        <div class="title">
+            <p>创建账户</p>
+        </div>
+        
+           <ul>
+               <li>
+                <label>用户名</label>
+                <input type="text" id="myname" placeholder="请输入用户名" >
+                <div id="ds"></div>
+               </li>
+               <li>
+                <label>密码</label>
+                <input type="password" id="psd" placeholder="请输入密码">
+                <div id="ds"></div>
+               </li>
+               <li>
+                <label>确认密码</label>
+                <input type="password" id="tpsd" placeholder="请输入密码">
+                <div id="ds"></div>
+               </li>
+               <li>
+                <label>手机号码</label>
+                <input type="text" id="pho" placeholder="请输入手机号">
+                <div id="ds"></div>
+               </li>
+           </ul>
+           <button>提交</button>
+    </div>
+    <script>
+        var mybutton = document.querySelector("button");
+        mybutton.onclick = function(){
+        var myname = document.getElementById('myname');
+        var nPattern = /^[a-zA-Z0-9_-]{4,16}$/
+        if(nPattern.test(myname.value)){
+           myname.nextElementSibling.innerHTML="用户名合法";
+           myname.nextElementSibling.className = 'nb';
+        }
+        else{
+            myname.nextElementSibling.innerHTML="用户名不合法";
+            myname.nextElementSibling.className = 'ak';
+        }
+        var psd = document.getElementById('psd');
+        var pPattern = /^1[0-5]{2}[6-9]{3}[a-dA-D]{2}$/
+        if(pPattern.test(psd.value)){
+            psd.nextElementSibling.innerHTML="密码合法";
+            psd.nextElementSibling.className="nb";
+        }
+        else{
+            psd.nextElementSibling.innerHTML="密码不合法";
+            psd.nextElementSibling.className = 'ak';
+        }
+        var tpsd = document.getElementById('tpsd');
+        if(tpsd.value == psd.value && pPattern.test(psd.value)){
+            tpsd.nextElementSibling.innerHTML="密码一致";
+            tpsd.nextElementSibling.className="nb";
+        }
+        else{
+            tpsd.nextElementSibling.innerHTML="密码不合法或不一致";
+            tpsd.nextElementSibling.className = 'ak';
+        }
+        var pho = document.getElementById('pho');
+        var oPattern = /^1[3-9][0-9]{9}$/
+        if(oPattern.test(pho.value)){
+            pho.nextElementSibling.innerHTML="手机号码合法";
+            pho.nextElementSibling.className='nb';
+        }
+        else{
+            pho.nextElementSibling.innerHTML="手机号码不合法";
+            pho.nextElementSibling.className='ak';
+        }
+    }
+       
+    </script>    
+</body>
+</html>
